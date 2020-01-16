@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_demo/screens/goodsList.dart';
 
 void main() async {
-  runApp(MaterialApp(
-    title: 'Navigation Basics',
-    home: GoodsListScreen(),
-  ));
+  runApp(MyApp());
 }
 
-
-
-
+class MyApp extends StatelessWidget {
+  Widget build(BuildContext context) => MaterialApp(
+        title: 'Navigation Basics',
+        home: GoodsListScreen(),
+      );
+}
 
 class FirstRoute extends StatelessWidget {
   @override

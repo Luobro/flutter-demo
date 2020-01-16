@@ -7,8 +7,7 @@ class GoodsListScreen extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('正在促销'),
-            bottom: TabBar(
+            title: TabBar(
               tabs: <Widget>[
                 Tab(
                   text: '最新优惠',
@@ -28,6 +27,13 @@ class GoodsListScreen extends StatelessWidget {
               GoodsListWidget('hot'),
               GoodsListWidget('plus'),
             ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.attach_money), title: Text('正在促销')),
+          BottomNavigationBarItem(icon: Icon(Icons.all_inclusive), title: Text('所有游戏')),
+          BottomNavigationBarItem(icon: Icon(Icons.account_box), title: Text('我')),
+        ],
           ),
         ),
       );

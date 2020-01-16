@@ -6,13 +6,24 @@ import 'package:provider/provider.dart';
 
 
 
-
-class GoodsListWidget extends StatelessWidget {
+class GoodsListWidget extends StatefulWidget {
   final String _type;
   GoodsListWidget(this._type);
 
   @override
+  _GoodsListWidget createState() => _GoodsListWidget(_type);
+}
+
+class _GoodsListWidget extends State<GoodsListWidget> with AutomaticKeepAliveClientMixin {
+  final String _type;
+  _GoodsListWidget(this._type);
+
+  @override
+  get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return ChangeNotifierProvider(
       create: (context) => GoodsList(type: _type),
       child: Consumer<GoodsList>(
